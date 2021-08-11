@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FlowHubData.XSD_Classes" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FlowHubData.XSD_Classes" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="JobProcesses.JobData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Managers" nillable="true" type="tns:ArrayOfJobProcesses.Manager" />
+      <xs:element minOccurs="0" name="ProjectLocations" nillable="true" type="tns:ArrayOfJobProcesses.ProjectLocation" />
+      <xs:element minOccurs="0" name="Teams" nillable="true" type="tns:ArrayOfJobProcesses.Team" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JobProcesses.JobData" nillable="true" type="tns:JobProcesses.JobData" />
+  <xs:complexType name="ArrayOfJobProcesses.Manager">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="JobProcesses.Manager" nillable="true" type="tns:JobProcesses.Manager" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJobProcesses.Manager" nillable="true" type="tns:ArrayOfJobProcesses.Manager" />
+  <xs:complexType name="JobProcesses.Manager">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="UserFirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserId" type="xs:long" />
+      <xs:element minOccurs="0" name="UserLastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserLogin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserVersion" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JobProcesses.Manager" nillable="true" type="tns:JobProcesses.Manager" />
+  <xs:complexType name="ArrayOfJobProcesses.ProjectLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="JobProcesses.ProjectLocation" nillable="true" type="tns:JobProcesses.ProjectLocation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJobProcesses.ProjectLocation" nillable="true" type="tns:ArrayOfJobProcesses.ProjectLocation" />
+  <xs:complexType name="JobProcesses.ProjectLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BaseUri" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerId" type="xs:long" />
+      <xs:element minOccurs="0" name="CustomerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Jobs" nillable="true" type="tns:ArrayOfJobProcesses.Job" />
+      <xs:element minOccurs="0" name="LocationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProjectId" type="xs:long" />
+      <xs:element minOccurs="0" name="ProjectLocationId" type="xs:long" />
+      <xs:element minOccurs="0" name="ProjectName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JobProcesses.ProjectLocation" nillable="true" type="tns:JobProcesses.ProjectLocation" />
+  <xs:complexType name="ArrayOfJobProcesses.Job">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="JobProcesses.Job" nillable="true" type="tns:JobProcesses.Job" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJobProcesses.Job" nillable="true" type="tns:ArrayOfJobProcesses.Job" />
+  <xs:complexType name="JobProcesses.Job">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BatchId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="JobActivities" nillable="true" type="tns:ArrayOfJobProcesses.JobActivity" />
+      <xs:element minOccurs="0" name="JobCompleted" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="JobDeadline" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="JobId" type="xs:long" />
+      <xs:element minOccurs="0" name="JobName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JobPriority" type="xs:int" />
+      <xs:element minOccurs="0" name="JobRelativePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JobScheduled" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="JobStarted" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="JobVersion" type="xs:int" />
+      <xs:element minOccurs="0" name="OfficeIdentifier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProjectOfficeIdentifierId" type="xs:long" />
+      <xs:element minOccurs="0" name="TeamId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="TeamIdentifier" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JobProcesses.Job" nillable="true" type="tns:JobProcesses.Job" />
+  <xs:complexType name="ArrayOfJobProcesses.JobActivity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="JobProcesses.JobActivity" nillable="true" type="tns:JobProcesses.JobActivity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJobProcesses.JobActivity" nillable="true" type="tns:ArrayOfJobProcesses.JobActivity" />
+  <xs:complexType name="JobProcesses.JobActivity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivityAssigned" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ActivityCompleted" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ActivityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ActivityOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="ActivityStarted" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AssignedUserId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Boxes" nillable="true" type="tns:ArrayOfJobProcesses.Box" />
+      <xs:element minOccurs="0" name="EligibleOperators" nillable="true" type="tns:ArrayOfJobProcesses.Operator" />
+      <xs:element minOccurs="0" name="JobActivityId" type="xs:long" />
+      <xs:element minOccurs="0" name="JobActivityVersion" type="xs:int" />
+      <xs:element minOccurs="0" name="Process" nillable="true" type="tns:JobProcesses.Process" />
+      <xs:element minOccurs="0" name="WorkflowActivityId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JobProcesses.JobActivity" nillable="true" type="tns:JobProcesses.JobActivity" />
+  <xs:complexType name="ArrayOfJobProcesses.Box">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="JobProcesses.Box" nillable="true" type="tns:JobProcesses.Box" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJobProcesses.Box" nillable="true" type="tns:ArrayOfJobProcesses.Box" />
+  <xs:complexType name="JobProcesses.Box">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BoxActivities" nillable="true" type="tns:ArrayOfJobProcesses.BoxActivity" />
+      <xs:element minOccurs="0" name="BoxId" type="xs:long" />
+      <xs:element minOccurs="0" name="BoxManifest" nillable="true" type="tns:JobProcesses.BoxManifest" />
+      <xs:element minOccurs="0" name="BoxName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BoxRelativePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BoxVersion" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JobProcesses.Box" nillable="true" type="tns:JobProcesses.Box" />
+  <xs:complexType name="ArrayOfJobProcesses.BoxActivity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="JobProcesses.BoxActivity" nillable="true" type="tns:JobProcesses.BoxActivity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJobProcesses.BoxActivity" nillable="true" type="tns:ArrayOfJobProcesses.BoxActivity" />
+  <xs:complexType name="JobProcesses.BoxActivity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivityAssigned" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ActivityCompleted" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ActivityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ActivityOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="ActivityStarted" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AssignedUserId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BoxActivityId" type="xs:long" />
+      <xs:element minOccurs="0" name="BoxActivityVersion" type="xs:int" />
+      <xs:element minOccurs="0" name="EligibleOperators" nillable="true" type="tns:ArrayOfJobProcesses.Operator" />
+      <xs:element minOccurs="0" name="Process" nillable="true" type="tns:JobProcesses.Process" />
+      <xs:element minOccurs="0" name="WorkflowActivityId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JobProcesses.BoxActivity" nillable="true" type="tns:JobProcesses.BoxActivity" />
+  <xs:complexType name="ArrayOfJobProcesses.Operator">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="JobProcesses.Operator" nillable="true" type="tns:JobProcesses.Operator" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJobProcesses.Operator" nillable="true" type="tns:ArrayOfJobProcesses.Operator" />
+  <xs:complexType name="JobProcesses.Operator">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TeamUserId" type="xs:long" />
+      <xs:element minOccurs="0" name="TeamUserVersion" type="xs:int" />
+      <xs:element minOccurs="0" name="UserFirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserId" type="xs:long" />
+      <xs:element minOccurs="0" name="UserLastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserLogin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserVersion" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JobProcesses.Operator" nillable="true" type="tns:JobProcesses.Operator" />
+  <xs:complexType name="JobProcesses.Process">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Automated" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ProcessCompleted" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ProcessErrored" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ProcessInfoId" type="xs:long" />
+      <xs:element minOccurs="0" name="ProcessName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProcessQueueId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="ProcessQueueRowVersion" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="ProcessStarted" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ServerName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JobProcesses.Process" nillable="true" type="tns:JobProcesses.Process" />
+  <xs:complexType name="JobProcesses.BoxManifest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BoxFinalizedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BoxId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BoxLabelPrintDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BoxManifestId" type="xs:long" />
+      <xs:element minOccurs="0" name="BoxManifestItems" nillable="true" type="tns:ArrayOfJobProcesses.BoxManifestItem" />
+      <xs:element minOccurs="0" name="BoxReceivedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BoxStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConversionType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberParcels" type="xs:int" />
+      <xs:element minOccurs="0" name="ProjectOfficeIdentifierId" type="xs:long" />
+      <xs:element minOccurs="0" name="ShipmentType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SpManifestId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JobProcesses.BoxManifest" nillable="true" type="tns:JobProcesses.BoxManifest" />
+  <xs:complexType name="ArrayOfJobProcesses.BoxManifestItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="JobProcesses.BoxManifestItem" nillable="true" type="tns:JobProcesses.BoxManifestItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJobProcesses.BoxManifestItem" nillable="true" type="tns:ArrayOfJobProcesses.BoxManifestItem" />
+  <xs:complexType name="JobProcesses.BoxManifestItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddedToBoxDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BoxFolderId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BoxManifestItemId" type="xs:long" />
+      <xs:element minOccurs="0" name="ConfirmationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsMerge" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IssueFolderDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PriorityFolderDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SpBoxManifestItemId" type="xs:long" />
+      <xs:element minOccurs="0" name="Ssn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JobProcesses.BoxManifestItem" nillable="true" type="tns:JobProcesses.BoxManifestItem" />
+  <xs:complexType name="ArrayOfJobProcesses.Team">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="JobProcesses.Team" nillable="true" type="tns:JobProcesses.Team" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJobProcesses.Team" nillable="true" type="tns:ArrayOfJobProcesses.Team" />
+  <xs:complexType name="JobProcesses.Team">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TeamId" type="xs:long" />
+      <xs:element minOccurs="0" name="TeamIdentifier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TeamLead" nillable="true" type="tns:JobProcesses.TeamLead" />
+      <xs:element minOccurs="0" name="TeamVersion" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JobProcesses.Team" nillable="true" type="tns:JobProcesses.Team" />
+  <xs:complexType name="JobProcesses.TeamLead">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TeamUserId" type="xs:long" />
+      <xs:element minOccurs="0" name="TeamUserVersion" type="xs:int" />
+      <xs:element minOccurs="0" name="UserFirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserId" type="xs:long" />
+      <xs:element minOccurs="0" name="UserLastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserLogin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserVersion" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JobProcesses.TeamLead" nillable="true" type="tns:JobProcesses.TeamLead" />
+</xs:schema>

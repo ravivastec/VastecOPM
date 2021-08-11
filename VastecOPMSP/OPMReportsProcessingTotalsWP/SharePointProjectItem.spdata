@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.VisualWebPart" DefaultFile="OPMReportsProcessingTotalsWPUserControl.ascx" SupportedTrustLevels="FullTrust" SupportedDeploymentScopes="Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Elements.xml" Target="OPMReportsProcessingTotalsWP\" Type="ElementManifest" />
+    <ProjectItemFile Source="OPMReportsProcessingTotalsWP.webpart" Target="OPMReportsProcessingTotalsWP\" Type="ElementFile" />
+    <ProjectItemFile Source="OPMReportsProcessingTotalsWPUserControl.ascx" Target="CONTROLTEMPLATES\VastecOPMSP\OPMReportsProcessingTotalsWP\" Type="TemplateFile" />
+  </Files>
+  <SafeControls>
+    <SafeControl Name="SafeControlEntry1" Assembly="$SharePoint.Project.AssemblyFullName$" Namespace="VastecOPMSP.OPMReportsProcessingTotalsWP" TypeName="*" IsSafe="true" IsSafeAgainstScript="false" />
+  </SafeControls>
+</ProjectItem>

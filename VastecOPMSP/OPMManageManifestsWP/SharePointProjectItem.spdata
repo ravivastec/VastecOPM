@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.VisualWebPart" DefaultFile="OPMManageManifestsWPUserControl.ascx" SupportedTrustLevels="FullTrust" SupportedDeploymentScopes="Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Elements.xml" Target="OPMManageManifestsWP\" Type="ElementManifest" />
+    <ProjectItemFile Source="OPMManageManifestsWP.webpart" Target="OPMManageManifestsWP\" Type="ElementFile" />
+    <ProjectItemFile Source="OPMManageManifestsWPUserControl.ascx" Target="CONTROLTEMPLATES\VastecOPMSP\OPMManageManifestsWP\" Type="TemplateFile" />
+  </Files>
+  <SafeControls>
+    <SafeControl Name="SafeControlEntry1" Assembly="$SharePoint.Project.AssemblyFullName$" Namespace="VastecOPMSP.OPMManageManifestsWP" TypeName="*" IsSafe="true" IsSafeAgainstScript="false" />
+  </SafeControls>
+</ProjectItem>

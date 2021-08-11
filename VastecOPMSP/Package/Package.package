@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="47d2c0b5-f050-4ea5-a428-b379692f7fe2" solutionId="47d2c0b5-f050-4ea5-a428-b379692f7fe2" resetWebServer="false" sharePointProductVersion="16.0" name="VastecOPMSP" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="5a703f0d-84a6-44f5-aae1-8fa654d90e71" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="6c34ad40-ae9d-4a64-9d16-df6b42a69757" />
+  </projectItems>
+</package>

@@ -1,0 +1,178 @@
+﻿.cursor-pointer {
+    cursor: pointer;
+}
+
+.manifest-table,
+.manifest-elements-table,
+.manifestElementsTableNew {
+    width: 100% !important;
+}
+
+    .manifestElementsTableNew select,
+    #manifestParentDiv select {
+        height: 22px !important;
+        min-width: 75px !important;
+    }
+
+    #manifestElementsTableNew input {
+        max-width: 100px !important;
+    }
+
+.popup-table-cell {
+    width: 25%;
+    padding: 5px;
+}
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+    /* Tooltip text */
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        padding: 5px 0;
+        border-radius: 6px;
+        /* Position the tooltip text - see examples below! */
+        position: absolute;
+        z-index: 1;
+    }
+
+    /* Show the tooltip text when you mouse over the tooltip container */
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+    }
+
+.disabledbutton {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+table.dataTable thead th {
+    text-align: center;
+    background: #0072c6;
+    color: white;
+}
+
+.text-center-align {
+    text-align: center;
+}
+
+.global-search-wrapper {
+    float: right;
+    text-align: right;
+}
+
+.create-new-manifest-wrapper {
+    float: left;
+}
+
+#manifestsTable_filter,
+#manifestElementsTable_filter,
+#manifestElementsTableNew_filter {
+    display: none !important;
+}
+
+#manifestDetailsInPopup {
+    width: 100%;
+}
+
+    #manifestDetailsInPopup select {
+        width: 120px;
+        height: 23px;
+    }
+
+#newParcel {
+    width: 120px;
+}
+
+#newAgency,
+#newConversionType {
+    width: 150px;
+    height: 22px;
+}
+
+.left-header-expand {
+    position: absolute;
+    top: 10px;
+    height: 20px;
+    width: 20px;
+    left: 5px;
+    background: url("/_layouts/15/images/expand.gif") no-repeat;
+}
+
+.left-header-collapse {
+    position: absolute;
+    top: 10px;
+    height: 20px;
+    width: 20px;
+    left: 5px;
+    background: url("/_layouts/15/images/collapse.gif") no-repeat;
+}
+
+.expand-left-nav-background {
+    background: url("/_layouts/15/images/expand.gif") no-repeat;
+}
+
+.collapse-left-nav-background {
+    background: url("/_layouts/15/images/collapse.gif") no-repeat;
+}
+
+.help-text {
+    padding-top: 8px;
+}
+
+input[type=date] {
+    line-height: initial !important;
+}
+
+#manifestsTreeView,
+#manifestsTreeView ul {
+    list-style-type: none;
+}
+
+    #manifestsTreeView ul,
+    #manifestsTreeView li {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+#manifestsTreeView {
+    margin: 0;
+    padding: 0;
+}
+
+.caret {
+    cursor: pointer;
+    -webkit-user-select: none; /* Safari 3.1+ */
+    -moz-user-select: none; /* Firefox 2+ */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none;
+}
+
+    .caret::before {
+        content: "\25B6";
+        color: black;
+        display: inline-block;
+        margin-right: 6px;
+    }
+
+.caret-down::before {
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Safari */
+    transform: rotate(90deg);
+}
+
+.nested {
+    display: none;
+}
+
+.active {
+    display: block;
+}

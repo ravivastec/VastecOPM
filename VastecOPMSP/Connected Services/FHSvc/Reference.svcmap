@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="065dbd19-0074-4909-9acb-4a9ec4bbf22a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://vas-opmsvc:8733/flowhub/service/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Vastec.FlowHub.Service.wsdl" MetadataType="Wsdl" ID="ac4b27f8-cd90-4802-8ccd-1fc696207d92" SourceId="1" SourceUrl="http://vas-opmsvc:8733/flowhub/service/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="1f0014da-a726-453e-adbf-975bbc3fcbff" SourceId="1" SourceUrl="http://vas-opmsvc:8733/flowhub/service/mex" />
+    <MetadataFile FileName="Vastec.FlowHub.Service.xsd" MetadataType="Schema" ID="06357ede-c391-4172-98d9-dff60b478051" SourceId="1" SourceUrl="http://vas-opmsvc:8733/flowhub/service/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="2f92e7c7-afb0-4808-81d0-611a7182cd59" SourceId="1" SourceUrl="http://vas-opmsvc:8733/flowhub/service/mex" />
+    <MetadataFile FileName="FlowHubData.Business.xsd" MetadataType="Schema" ID="ae7010ad-cdbb-43dd-b0fd-5de85f1653eb" SourceId="1" SourceUrl="http://vas-opmsvc:8733/flowhub/service/mex" />
+    <MetadataFile FileName="FlowHubData.XSD_Classes.xsd" MetadataType="Schema" ID="5f44329d-3292-4bb1-b82c-adc519a9da4d" SourceId="1" SourceUrl="http://vas-opmsvc:8733/flowhub/service/mex" />
+    <MetadataFile FileName="System.Drawing.xsd" MetadataType="Schema" ID="28b76e8b-a543-4cf3-ab35-8359d4cee8c3" SourceId="1" SourceUrl="http://vas-opmsvc:8733/flowhub/service/mex" />
+    <MetadataFile FileName="FlowHubData.DataAccess.xsd" MetadataType="Schema" ID="633358cf-e311-4578-b5d0-7c087fb07939" SourceId="1" SourceUrl="http://vas-opmsvc:8733/flowhub/service/mex" />
+    <MetadataFile FileName="Message.xsd" MetadataType="Schema" ID="7d1844a8-d51b-44a2-87fc-443b325eeb13" SourceId="1" SourceUrl="http://vas-opmsvc:8733/flowhub/service/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="414c1b11-2625-4fe0-8bc0-f946508fb947" SourceId="1" SourceUrl="http://vas-opmsvc:8733/flowhub/service/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

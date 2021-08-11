@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.VisualWebPart" DefaultFile="OPMProductionReportsWPUserControl.ascx" SupportedTrustLevels="FullTrust" SupportedDeploymentScopes="Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Elements.xml" Target="OPMProductionReportsWP\" Type="ElementManifest" />
+    <ProjectItemFile Source="OPMProductionReportsWP.webpart" Target="OPMProductionReportsWP\" Type="ElementFile" />
+    <ProjectItemFile Source="OPMProductionReportsWPUserControl.ascx" Target="CONTROLTEMPLATES\VastecOPMSP.OPMReports\OPMProductionReportsWP\" Type="TemplateFile" />
+  </Files>
+  <SafeControls>
+    <SafeControl Name="SafeControlEntry1" Assembly="$SharePoint.Project.AssemblyFullName$" Namespace="VastecOPMSP.OPMReports.OPMProductionReportsWP" TypeName="*" IsSafe="true" IsSafeAgainstScript="false" />
+  </SafeControls>
+</ProjectItem>

@@ -1,0 +1,1 @@
+﻿<%@ WebService Class="VastecOPMSP.Layouts.VastecOPMSPWebService.WebService, VastecOPMSP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0c9ae3b2f751c2a7" %>

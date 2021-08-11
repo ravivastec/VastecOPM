@@ -1,0 +1,1316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/FlowHubData.Business" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FlowHubData.Business" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/System.Drawing" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ProjectWorkflowList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProjectWorkflow" nillable="true" type="tns:ProjectWorkflow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProjectWorkflowList" nillable="true" type="tns:ProjectWorkflowList" />
+  <xs:complexType name="ProjectWorkflow">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ProjectId" type="xs:long" />
+      <xs:element minOccurs="0" name="ProjectWorkflowActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ProjectWorkflowId" type="xs:long" />
+      <xs:element minOccurs="0" name="Version" type="xs:int" />
+      <xs:element minOccurs="0" name="WorkflowId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProjectWorkflow" nillable="true" type="tns:ProjectWorkflow" />
+  <xs:complexType name="RoleList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Role" nillable="true" type="tns:Role" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RoleList" nillable="true" type="tns:RoleList" />
+  <xs:complexType name="Role">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoleActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RoleGroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoleId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Role" nillable="true" type="tns:Role" />
+  <xs:complexType name="TeamList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Team" nillable="true" type="tns:Team" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TeamList" nillable="true" type="tns:TeamList" />
+  <xs:complexType name="Team">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MemberInfoLoaded" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OperatorList" nillable="true" type="tns:UserList" />
+      <xs:element minOccurs="0" name="TeamActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TeamId" type="xs:long" />
+      <xs:element minOccurs="0" name="TeamIdentifier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TeamLeadList" nillable="true" type="tns:UserList" />
+      <xs:element minOccurs="0" name="Version" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Team" nillable="true" type="tns:Team" />
+  <xs:complexType name="UserList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserList" nillable="true" type="tns:UserList" />
+  <xs:complexType name="User">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Domain" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocationId" type="xs:long" />
+      <xs:element minOccurs="0" name="Login" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserId" type="xs:long" />
+      <xs:element minOccurs="0" name="UserRoles" nillable="true" type="tns:RoleList" />
+      <xs:element minOccurs="0" name="Version" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="TeamUserList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TeamUser" nillable="true" type="tns:TeamUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TeamUserList" nillable="true" type="tns:TeamUserList" />
+  <xs:complexType name="TeamUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeUserId" type="xs:long" />
+      <xs:element minOccurs="0" name="TeamId" type="xs:long" />
+      <xs:element minOccurs="0" name="TeamLead" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TeamUserActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TeamUserId" type="xs:long" />
+      <xs:element minOccurs="0" name="UserId" type="xs:long" />
+      <xs:element minOccurs="0" name="Version" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TeamUser" nillable="true" type="tns:TeamUser" />
+  <xs:complexType name="TeamUserRoleList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TeamUserRole" nillable="true" type="tns:TeamUserRole" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TeamUserRoleList" nillable="true" type="tns:TeamUserRoleList" />
+  <xs:complexType name="TeamUserRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RoleId" type="xs:long" />
+      <xs:element minOccurs="0" name="TeamUserId" type="xs:long" />
+      <xs:element minOccurs="0" name="TeamUserRoleId" type="xs:long" />
+      <xs:element minOccurs="0" name="TeamUserRolePriority" type="xs:int" />
+      <xs:element minOccurs="0" name="Version" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TeamUserRole" nillable="true" type="tns:TeamUserRole" />
+  <xs:complexType name="ArrayOfUserActivity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserActivity" nillable="true" type="tns:UserActivity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserActivity" nillable="true" type="tns:ArrayOfUserActivity" />
+  <xs:complexType name="UserActivity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivityEndTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ActivityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ActivityStartTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UserActivityId" type="xs:long" />
+      <xs:element minOccurs="0" name="UserId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserActivity" nillable="true" type="tns:UserActivity" />
+  <xs:complexType name="ArrayOfUserCookie">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserCookie" nillable="true" type="tns:UserCookie" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserCookie" nillable="true" type="tns:ArrayOfUserCookie" />
+  <xs:complexType name="UserCookie">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CookieGroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CookieName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CookieValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserCookieId" type="xs:long" />
+      <xs:element minOccurs="0" name="UserId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserCookie" nillable="true" type="tns:UserCookie" />
+  <xs:complexType name="UserNoteList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserNote" nillable="true" type="tns:UserNote" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserNoteList" nillable="true" type="tns:UserNoteList" />
+  <xs:complexType name="UserNote">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BoxActivityId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="ChangeUserId" type="xs:long" />
+      <xs:element minOccurs="0" name="JobActivityId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="ModifyTs" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NoteText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserNoteId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserNote" nillable="true" type="tns:UserNote" />
+  <xs:complexType name="UserRoleList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserRole" nillable="true" type="tns:UserRole" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserRoleList" nillable="true" type="tns:UserRoleList" />
+  <xs:complexType name="UserRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RoleId" type="xs:long" />
+      <xs:element minOccurs="0" name="UserId" type="xs:long" />
+      <xs:element minOccurs="0" name="UserRoleActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UserRoleId" type="xs:long" />
+      <xs:element minOccurs="0" name="Version" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserRole" nillable="true" type="tns:UserRole" />
+  <xs:complexType name="WorkflowList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Workflow" nillable="true" type="tns:Workflow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorkflowList" nillable="true" type="tns:WorkflowList" />
+  <xs:complexType name="Workflow">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" type="xs:int" />
+      <xs:element minOccurs="0" name="WorkflowActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="WorkflowId" type="xs:long" />
+      <xs:element minOccurs="0" name="WorkflowName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkflowScope" type="tns:Workflow.WorkflowScopes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Workflow" nillable="true" type="tns:Workflow" />
+  <xs:simpleType name="Workflow.WorkflowScopes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Box" />
+      <xs:enumeration value="Job" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Workflow.WorkflowScopes" nillable="true" type="tns:Workflow.WorkflowScopes" />
+  <xs:complexType name="WorkflowActivityList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkflowActivity" nillable="true" type="tns:WorkflowActivity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorkflowActivityList" nillable="true" type="tns:WorkflowActivityList" />
+  <xs:complexType name="WorkflowActivity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivityActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ActivityDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ActivityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ActivityOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="AssociatedRoleId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BoxWorkflowId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="ProcessInfoId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Version" type="xs:int" />
+      <xs:element minOccurs="0" name="WorkflowActivityId" type="xs:long" />
+      <xs:element minOccurs="0" name="WorkflowId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorkflowActivity" nillable="true" type="tns:WorkflowActivity" />
+  <xs:complexType name="ManifestResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResponseMessage" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ManifestResponse" nillable="true" type="tns:ManifestResponse" />
+  <xs:complexType name="IssueNotificationList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IssueNotification" nillable="true" type="tns:IssueNotification" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IssueNotificationList" nillable="true" type="tns:IssueNotificationList" />
+  <xs:complexType name="IssueNotification">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BoxActivityId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BoxId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="CreateDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DeletedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FileInfoId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="InstanceCount" type="xs:int" />
+      <xs:element minOccurs="0" name="IssueDebugInfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IssueMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IssueNotificationId" type="xs:long" />
+      <xs:element minOccurs="0" name="JobActivityId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="JobId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="ModifyDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ProjectId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="ProjectOfficeIdentifierId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="ReadDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RecipientUserId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="RowVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TargetRoleId" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IssueNotification" nillable="true" type="tns:IssueNotification" />
+  <xs:complexType name="JobList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Job" nillable="true" type="tns:Job" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JobList" nillable="true" type="tns:JobList" />
+  <xs:complexType name="Job">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BatchId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="JobCompleted" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="JobDeadline" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="JobDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JobId" type="xs:long" />
+      <xs:element minOccurs="0" name="JobName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JobProfilePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JobRelativePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JobScheduled" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="JobStarted" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PickupDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Priority" type="xs:int" />
+      <xs:element minOccurs="0" name="ProjectLocationId" type="xs:long" />
+      <xs:element minOccurs="0" name="TeamId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Version" type="xs:int" />
+      <xs:element minOccurs="0" name="WorkflowId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Job" nillable="true" type="tns:Job" />
+  <xs:complexType name="CurrentJobActivity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsABoxProcessActivity" type="xs:boolean" />
+      <xs:element minOccurs="0" name="JobActivityId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CurrentJobActivity" nillable="true" type="tns:CurrentJobActivity" />
+  <xs:complexType name="JobActivityList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="JobActivity" nillable="true" type="tns:JobActivity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JobActivityList" nillable="true" type="tns:JobActivityList" />
+  <xs:complexType name="JobActivity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivityAssigned" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ActivityCompleted" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ActivityStarted" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AssignedUserId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="HasOperationNotes" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasUserNotes" type="xs:boolean" />
+      <xs:element minOccurs="0" name="JobActivityId" type="xs:long" />
+      <xs:element minOccurs="0" name="JobId" type="xs:long" />
+      <xs:element minOccurs="0" name="UsersWithJobActivityRole" nillable="true" type="tns:UserList" />
+      <xs:element minOccurs="0" name="UsersWithJobActivityRoleLoaded" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Version" type="xs:int" />
+      <xs:element minOccurs="0" name="WorkflowActivityId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JobActivity" nillable="true" type="tns:JobActivity" />
+  <xs:complexType name="JobUserRoleList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="JobUserRole" nillable="true" type="tns:JobUserRole" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JobUserRoleList" nillable="true" type="tns:JobUserRoleList" />
+  <xs:complexType name="JobUserRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="JobId" type="xs:long" />
+      <xs:element minOccurs="0" name="JobObject" nillable="true" type="tns:Job" />
+      <xs:element minOccurs="0" name="JobUserRoleId" type="xs:long" />
+      <xs:element minOccurs="0" name="RoleId" type="xs:long" />
+      <xs:element minOccurs="0" name="RoleObject" nillable="true" type="tns:Role" />
+      <xs:element minOccurs="0" name="UserId" type="xs:long" />
+      <xs:element minOccurs="0" name="UserObject" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="UserRolePriority" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JobUserRole" nillable="true" type="tns:JobUserRole" />
+  <xs:complexType name="LocationList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Location" nillable="true" type="tns:Location" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LocationList" nillable="true" type="tns:LocationList" />
+  <xs:complexType name="Location">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocationId" type="xs:long" />
+      <xs:element minOccurs="0" name="LocationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Location" nillable="true" type="tns:Location" />
+  <xs:complexType name="MdFieldList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MdField" nillable="true" type="tns:MdField" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MdFieldList" nillable="true" type="tns:MdFieldList" />
+  <xs:complexType name="MdField">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GlobalUniqueKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaskedText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MdFieldId" type="xs:long" />
+      <xs:element minOccurs="0" name="MdFieldIdentifierId" type="xs:long" />
+      <xs:element minOccurs="0" name="MdFormPageId" type="xs:long" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.Drawing" minOccurs="0" name="PrimeRectangle" type="q1:Rectangle" />
+      <xs:element minOccurs="0" name="PrimeXmlResolution" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MdField" nillable="true" type="tns:MdField" />
+  <xs:complexType name="MdFieldIdentifierList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MdFieldIdentifier" nillable="true" type="tns:MdFieldIdentifier" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MdFieldIdentifierList" nillable="true" type="tns:MdFieldIdentifierList" />
+  <xs:complexType name="MdFieldIdentifier">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GlobalUniqueKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsMetadataField" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MdFieldIdentifierId" type="xs:long" />
+      <xs:element minOccurs="0" name="RuleFieldType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MdFieldIdentifier" nillable="true" type="tns:MdFieldIdentifier" />
+  <xs:complexType name="MdFormList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MdForm" nillable="true" type="tns:MdForm" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MdFormList" nillable="true" type="tns:MdFormList" />
+  <xs:complexType name="MdForm">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FolderSide" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FormDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FormGroupId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FormName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FormType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FormVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GlobalUniqueKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsAPackage" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MdFormId" type="xs:long" />
+      <xs:element minOccurs="0" name="Reference" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SourceAgency" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VastecForm" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MdForm" nillable="true" type="tns:MdForm" />
+  <xs:complexType name="MdFormPackageList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MdFormPackage" nillable="true" type="tns:MdFormPackage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MdFormPackageList" nillable="true" type="tns:MdFormPackageList" />
+  <xs:complexType name="MdFormPackage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MdFormId" type="xs:long" />
+      <xs:element minOccurs="0" name="MdFormPackageId" type="xs:long" />
+      <xs:element minOccurs="0" name="PackageMdFormId" type="xs:long" />
+      <xs:element minOccurs="0" name="VastecPackageMdFormId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MdFormPackage" nillable="true" type="tns:MdFormPackage" />
+  <xs:complexType name="MdFormPageList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MdFormPage" nillable="true" type="tns:MdFormPage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MdFormPageList" nillable="true" type="tns:MdFormPageList" />
+  <xs:complexType name="MdFormPage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FullTextMergeTemplate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GlobalUniqueKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MdFormId" type="xs:long" />
+      <xs:element minOccurs="0" name="MdFormPageId" type="xs:long" />
+      <xs:element minOccurs="0" name="PageGroupId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PageHash" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PageName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PageNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="TemplateFilename" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TemplateText" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MdFormPage" nillable="true" type="tns:MdFormPage" />
+  <xs:complexType name="MdFormZoneList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MdFormZone" nillable="true" type="tns:MdFormZone" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MdFormZoneList" nillable="true" type="tns:MdFormZoneList" />
+  <xs:complexType name="MdFormZone">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GlobalUniqueKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MdFormPageId" type="xs:long" />
+      <xs:element minOccurs="0" name="MdFormZoneId" type="xs:long" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System.Drawing" minOccurs="0" name="PrimeRectangle" type="q2:Rectangle" />
+      <xs:element minOccurs="0" name="PrimeXmlResolution" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MdFormZone" nillable="true" type="tns:MdFormZone" />
+  <xs:complexType name="MdFormZoneAttribList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MdFormZoneAttrib" nillable="true" type="tns:MdFormZoneAttrib" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MdFormZoneAttribList" nillable="true" type="tns:MdFormZoneAttribList" />
+  <xs:complexType name="MdFormZoneAttrib">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttributeText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GlobalUniqueKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MdFormZoneAttribId" type="xs:long" />
+      <xs:element minOccurs="0" name="MdFormZoneId" type="xs:long" />
+      <xs:element minOccurs="0" name="NegationFlag" type="xs:boolean" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System.Drawing" minOccurs="0" name="PrimeRectangle" type="q3:Rectangle" />
+      <xs:element minOccurs="0" name="PrimeXmlResolution" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MdFormZoneAttrib" nillable="true" type="tns:MdFormZoneAttrib" />
+  <xs:complexType name="MetadataTypeList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MetadataType" nillable="true" type="tns:MetadataType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MetadataTypeList" nillable="true" type="tns:MetadataTypeList" />
+  <xs:complexType name="MetadataType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MetadataTypeId" type="xs:long" />
+      <xs:element minOccurs="0" name="MetadataTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProcessInfoId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MetadataType" nillable="true" type="tns:MetadataType" />
+  <xs:complexType name="ProcessConfigList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProcessConfig" nillable="true" type="tns:ProcessConfig" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcessConfigList" nillable="true" type="tns:ProcessConfigList" />
+  <xs:complexType name="ProcessConfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ConfigGroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConfigName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConfigValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProcessConfigId" type="xs:long" />
+      <xs:element minOccurs="0" name="ProcessInfoId" type="xs:long" />
+      <xs:element minOccurs="0" name="Version" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcessConfig" nillable="true" type="tns:ProcessConfig" />
+  <xs:complexType name="ProcessInfoList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProcessInfo" nillable="true" type="tns:ProcessInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcessInfoList" nillable="true" type="tns:ProcessInfoList" />
+  <xs:complexType name="ProcessInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Automated" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanEdit" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ProcessDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProcessInfoId" type="xs:long" />
+      <xs:element minOccurs="0" name="ProcessName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsableByWorkflow" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Version" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcessInfo" nillable="true" type="tns:ProcessInfo" />
+  <xs:complexType name="ProcessQueueList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProcessQueue" nillable="true" type="tns:ProcessQueue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcessQueueList" nillable="true" type="tns:ProcessQueueList" />
+  <xs:complexType name="ProcessQueue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BoxActivityId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="JobActivityId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="JobId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="ProcessCompleted" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ProcessErrorDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ProcessInfoId" type="xs:long" />
+      <xs:element minOccurs="0" name="ProcessQueueId" type="xs:long" />
+      <xs:element minOccurs="0" name="ProcessServerId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="ProcessStarted" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SleepUntilTime" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcessQueue" nillable="true" type="tns:ProcessQueue" />
+  <xs:complexType name="ProcessQueueStateList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProcessQueueState" nillable="true" type="tns:ProcessQueueState" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcessQueueStateList" nillable="true" type="tns:ProcessQueueStateList" />
+  <xs:complexType name="ProcessQueueState">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ProcessQueueId" type="xs:long" />
+      <xs:element minOccurs="0" name="ProcessQueueStateId" type="xs:long" />
+      <xs:element minOccurs="0" name="SettingGroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SettingName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SettingValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcessQueueState" nillable="true" type="tns:ProcessQueueState" />
+  <xs:complexType name="ProcessServerList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProcessServer" nillable="true" type="tns:ProcessServer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcessServerList" nillable="true" type="tns:ProcessServerList" />
+  <xs:complexType name="ProcessServer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LastHeartbeat" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ProcessServerId" type="xs:long" />
+      <xs:element minOccurs="0" name="ServerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcessServer" nillable="true" type="tns:ProcessServer" />
+  <xs:complexType name="ProjectList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Project" nillable="true" type="tns:Project" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProjectList" nillable="true" type="tns:ProjectList" />
+  <xs:complexType name="Project">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerId" type="xs:long" />
+      <xs:element minOccurs="0" name="ProcessInfoId" type="xs:long" />
+      <xs:element minOccurs="0" name="ProjectActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ProjectDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProjectId" type="xs:long" />
+      <xs:element minOccurs="0" name="ProjectName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Project" nillable="true" type="tns:Project" />
+  <xs:complexType name="ProjectLocationList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProjectLocation" nillable="true" type="tns:ProjectLocation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProjectLocationList" nillable="true" type="tns:ProjectLocationList" />
+  <xs:complexType name="ProjectLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LocationId" type="xs:long" />
+      <xs:element minOccurs="0" name="ProjectId" type="xs:long" />
+      <xs:element minOccurs="0" name="ProjectLocationId" type="xs:long" />
+      <xs:element minOccurs="0" name="ProjectRelativePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProjectLocation" nillable="true" type="tns:ProjectLocation" />
+  <xs:complexType name="ProjectLocationUserRoleList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProjectLocationUserRole" nillable="true" type="tns:ProjectLocationUserRole" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProjectLocationUserRoleList" nillable="true" type="tns:ProjectLocationUserRoleList" />
+  <xs:complexType name="ProjectLocationUserRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ProjectLocationId" type="xs:long" />
+      <xs:element minOccurs="0" name="ProjectLocationObject" nillable="true" type="tns:ProjectLocation" />
+      <xs:element minOccurs="0" name="ProjectLocationUserRoleId" type="xs:long" />
+      <xs:element minOccurs="0" name="RoleId" type="xs:long" />
+      <xs:element minOccurs="0" name="RoleObject" nillable="true" type="tns:Role" />
+      <xs:element minOccurs="0" name="UserId" type="xs:long" />
+      <xs:element minOccurs="0" name="UserObject" nillable="true" type="tns:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProjectLocationUserRole" nillable="true" type="tns:ProjectLocationUserRole" />
+  <xs:complexType name="ProjectManifestLookupList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProjectManifestLookup" nillable="true" type="tns:ProjectManifestLookup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProjectManifestLookupList" nillable="true" type="tns:ProjectManifestLookupList" />
+  <xs:complexType name="ProjectManifestLookup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeUserId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="CreateTs" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EntryType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProjectId" type="xs:long" />
+      <xs:element minOccurs="0" name="ProjectManifestLookupId" type="xs:long" />
+      <xs:element minOccurs="0" name="Ssn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProjectManifestLookup" nillable="true" type="tns:ProjectManifestLookup" />
+  <xs:complexType name="ProjectOfficeIdentifierList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProjectOfficeIdentifier" nillable="true" type="tns:ProjectOfficeIdentifier" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProjectOfficeIdentifierList" nillable="true" type="tns:ProjectOfficeIdentifierList" />
+  <xs:complexType name="ProjectOfficeIdentifier">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OfficeIdentifier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProjectId" type="xs:long" />
+      <xs:element minOccurs="0" name="ProjectOfficeIdentifierId" type="xs:long" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StreetAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Zipcode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProjectOfficeIdentifier" nillable="true" type="tns:ProjectOfficeIdentifier" />
+  <xs:complexType name="ArrayOfBatch">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Batch" nillable="true" type="tns:Batch" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBatch" nillable="true" type="tns:ArrayOfBatch" />
+  <xs:complexType name="Batch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BatchAcceptedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BatchDeadline" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BatchFileCount" type="xs:int" />
+      <xs:element minOccurs="0" name="BatchId" type="xs:long" />
+      <xs:element minOccurs="0" name="BatchIdentifier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BatchRelativePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BatchStart" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Batch" nillable="true" type="tns:Batch" />
+  <xs:complexType name="BoxList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Box" nillable="true" type="tns:Box" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BoxList" nillable="true" type="tns:BoxList" />
+  <xs:complexType name="Box">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BoxActivities" nillable="true" type="tns:BoxActivityList" />
+      <xs:element minOccurs="0" name="BoxActivityLoaded" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BoxContainer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BoxFinished" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BoxHold" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BoxId" type="xs:long" />
+      <xs:element minOccurs="0" name="BoxName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BoxRelativePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JobId" type="xs:long" />
+      <xs:element minOccurs="0" name="LocationId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Version" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Box" nillable="true" type="tns:Box" />
+  <xs:complexType name="BoxActivityList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BoxActivity" nillable="true" type="tns:BoxActivity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BoxActivityList" nillable="true" type="tns:BoxActivityList" />
+  <xs:complexType name="BoxActivity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivityAssigned" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ActivityCompleted" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ActivityStarted" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AssignedUserId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BoxActivityId" type="xs:long" />
+      <xs:element minOccurs="0" name="BoxId" type="xs:long" />
+      <xs:element minOccurs="0" name="HasOperationNotes" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasUserNotes" type="xs:boolean" />
+      <xs:element minOccurs="0" name="JobActivityId" type="xs:long" />
+      <xs:element minOccurs="0" name="UsersWithBoxActivityRole" nillable="true" type="tns:UserList" />
+      <xs:element minOccurs="0" name="UsersWithBoxActivityRoleLoaded" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Version" type="xs:int" />
+      <xs:element minOccurs="0" name="WorkflowActivityId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BoxActivity" nillable="true" type="tns:BoxActivity" />
+  <xs:complexType name="BoxAndBoxActivityId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BoxActivityId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BoxId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BoxAndBoxActivityId" nillable="true" type="tns:BoxAndBoxActivityId" />
+  <xs:complexType name="BoxFolderList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BoxFolder" nillable="true" type="tns:BoxFolder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BoxFolderList" nillable="true" type="tns:BoxFolderList" />
+  <xs:complexType name="BoxFolder">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllFormsAreValid" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AllFormsHadQa" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BoxFolderId" type="xs:long" />
+      <xs:element minOccurs="0" name="BoxId" type="xs:long" />
+      <xs:element minOccurs="0" name="FolderRelativePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FolderStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ScanFileName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BoxFolder" nillable="true" type="tns:BoxFolder" />
+  <xs:complexType name="BoxManifestList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BoxManifest" nillable="true" type="tns:BoxManifest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BoxManifestList" nillable="true" type="tns:BoxManifestList" />
+  <xs:complexType name="BoxManifest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BoxFinalizedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BoxId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BoxLabelPrintDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BoxManifestId" type="xs:long" />
+      <xs:element minOccurs="0" name="BoxReceivedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BoxStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConversionType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberParcels" type="xs:int" />
+      <xs:element minOccurs="0" name="ProjectOfficeIdentifierId" type="xs:long" />
+      <xs:element minOccurs="0" name="ShipmentType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SpManifestId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BoxManifest" nillable="true" type="tns:BoxManifest" />
+  <xs:complexType name="BoxManifestItemList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BoxManifestItem" nillable="true" type="tns:BoxManifestItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BoxManifestItemList" nillable="true" type="tns:BoxManifestItemList" />
+  <xs:complexType name="BoxManifestItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddedToBoxDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BoxFolderId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BoxManifestId" type="xs:long" />
+      <xs:element minOccurs="0" name="BoxManifestItemId" type="xs:long" />
+      <xs:element minOccurs="0" name="ConfirmationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsMerge" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IssueFolderDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PriorityFolderDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SpManifestItemId" type="xs:long" />
+      <xs:element minOccurs="0" name="Ssn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BoxManifestItem" nillable="true" type="tns:BoxManifestItem" />
+  <xs:complexType name="BoxManifestItemTransmitList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BoxManifestItemTransmit" nillable="true" type="tns:BoxManifestItemTransmit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BoxManifestItemTransmitList" nillable="true" type="tns:BoxManifestItemTransmitList" />
+  <xs:complexType name="BoxManifestItemTransmit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BoxManifestItemId" type="xs:long" />
+      <xs:element minOccurs="0" name="BoxManifestItemTransmitId" type="xs:long" />
+      <xs:element minOccurs="0" name="PackageConfirmed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TransmitDate" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BoxManifestItemTransmit" nillable="true" type="tns:BoxManifestItemTransmit" />
+  <xs:complexType name="CustomerList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Customer" nillable="true" type="tns:Customer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerList" nillable="true" type="tns:CustomerList" />
+  <xs:complexType name="Customer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CustomerFolderUri" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerId" type="xs:long" />
+      <xs:element minOccurs="0" name="CustomerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerNotes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MetadataTypeId" type="xs:long" />
+      <xs:element minOccurs="0" name="ProcessInfoId" type="xs:long" />
+      <xs:element minOccurs="0" name="UsesBoxManifest" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Version" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Customer" nillable="true" type="tns:Customer" />
+  <xs:complexType name="CustomerUserRoleList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomerUserRole" nillable="true" type="tns:CustomerUserRole" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerUserRoleList" nillable="true" type="tns:CustomerUserRoleList" />
+  <xs:complexType name="CustomerUserRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerId" type="xs:long" />
+      <xs:element minOccurs="0" name="CustomerObject" nillable="true" type="tns:Customer" />
+      <xs:element minOccurs="0" name="CustomerUserRoleId" type="xs:long" />
+      <xs:element minOccurs="0" name="RoleId" type="xs:long" />
+      <xs:element minOccurs="0" name="RoleObject" nillable="true" type="tns:Role" />
+      <xs:element minOccurs="0" name="UserId" type="xs:long" />
+      <xs:element minOccurs="0" name="UserObject" nillable="true" type="tns:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerUserRole" nillable="true" type="tns:CustomerUserRole" />
+  <xs:simpleType name="DataView.ActivityStatusValues">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="All" />
+      <xs:enumeration value="Unassigned" />
+      <xs:enumeration value="Assigned" />
+      <xs:enumeration value="UnStarted" />
+      <xs:enumeration value="Started" />
+      <xs:enumeration value="Uncompleted" />
+      <xs:enumeration value="Completed" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DataView.ActivityStatusValues" nillable="true" type="tns:DataView.ActivityStatusValues" />
+  <xs:complexType name="DataView.ActivityStatusList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataView.ActivityStatus" nillable="true" type="tns:DataView.ActivityStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataView.ActivityStatusList" nillable="true" type="tns:DataView.ActivityStatusList" />
+  <xs:complexType name="DataView.ActivityStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivityAccepted" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ActivityAssigned" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ActivityCompleted" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ActivityCreateTs" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ActivityDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ActivityId" type="xs:long" />
+      <xs:element minOccurs="0" name="ActivityModifyTs" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ActivityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ActivityStarted" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ActivityType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ActivityVersion" type="xs:int" />
+      <xs:element minOccurs="0" name="AssignedUserDomain" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AssignedUserId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="AssignedUserLogin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AssocRoleId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="AutomatedProcess" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BoxActivityOrder" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="BoxFinished" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BoxId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BoxName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BoxOnHold" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BoxRelativePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BoxVersion" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CustomerFolderUri" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerId" type="xs:long" />
+      <xs:element minOccurs="0" name="CustomerMetadataTypeId" type="xs:long" />
+      <xs:element minOccurs="0" name="CustomerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerProcessInfoId" type="xs:long" />
+      <xs:element minOccurs="0" name="FormCount" type="xs:int" />
+      <xs:element minOccurs="0" name="HasOperationNotes" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasUserNotes" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IssueCount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="JobActivityOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="JobDeadline" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="JobDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JobId" type="xs:long" />
+      <xs:element minOccurs="0" name="JobName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JobPriority" type="xs:int" />
+      <xs:element minOccurs="0" name="JobProfileLocation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JobRelativePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MissingFormCount" type="xs:int" />
+      <xs:element minOccurs="0" name="ProjectId" type="xs:long" />
+      <xs:element minOccurs="0" name="ProjectLocationId" type="xs:long" />
+      <xs:element minOccurs="0" name="ProjectName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProjectProcessInfoId" type="xs:long" />
+      <xs:element minOccurs="0" name="ProjectRelativePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TeamId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="UserPriority" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataView.ActivityStatus" nillable="true" type="tns:DataView.ActivityStatus" />
+  <xs:complexType name="ArrayOfDataView.ProcessingTotals">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataView.ProcessingTotals" nillable="true" type="tns:DataView.ProcessingTotals" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataView.ProcessingTotals" nillable="true" type="tns:ArrayOfDataView.ProcessingTotals" />
+  <xs:complexType name="DataView.ProcessingTotals">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivitiesInScan" type="xs:long" />
+      <xs:element minOccurs="0" name="AvgFormsPerFolder" type="xs:long" />
+      <xs:element minOccurs="0" name="AvgPagesPerForm" type="xs:long" />
+      <xs:element minOccurs="0" name="BoxesReceived" type="xs:long" />
+      <xs:element minOccurs="0" name="CustomerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FoldersCompleted" type="xs:long" />
+      <xs:element minOccurs="0" name="FoldersManifested" type="xs:long" />
+      <xs:element minOccurs="0" name="FoldersReceived" type="xs:long" />
+      <xs:element minOccurs="0" name="FormsCompleted" type="xs:long" />
+      <xs:element minOccurs="0" name="IssueFolders" type="xs:long" />
+      <xs:element minOccurs="0" name="OfficeIdentifier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PagesCompleted" type="xs:long" />
+      <xs:element minOccurs="0" name="PagesTransmitted" type="xs:long" />
+      <xs:element minOccurs="0" name="PriorityFolders" type="xs:long" />
+      <xs:element minOccurs="0" name="ProjectId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataView.ProcessingTotals" nillable="true" type="tns:DataView.ProcessingTotals" />
+  <xs:complexType name="ArrayOfDataView.UniqueSaveStateItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataView.UniqueSaveStateItems" nillable="true" type="tns:DataView.UniqueSaveStateItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataView.UniqueSaveStateItems" nillable="true" type="tns:ArrayOfDataView.UniqueSaveStateItems" />
+  <xs:complexType name="DataView.UniqueSaveStateItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ItemText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemTextCount" type="xs:int" />
+      <xs:element minOccurs="0" name="MdFieldIdentifierId" type="xs:long" />
+      <xs:element minOccurs="0" name="MdFieldName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataView.UniqueSaveStateItems" nillable="true" type="tns:DataView.UniqueSaveStateItems" />
+  <xs:complexType name="ArrayOfDataView.SaveStateValueLookup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataView.SaveStateValueLookup" nillable="true" type="tns:DataView.SaveStateValueLookup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataView.SaveStateValueLookup" nillable="true" type="tns:ArrayOfDataView.SaveStateValueLookup" />
+  <xs:complexType name="DataView.SaveStateValueLookup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BoxId" type="xs:long" />
+      <xs:element minOccurs="0" name="FileInfoId" type="xs:long" />
+      <xs:element minOccurs="0" name="IndexSaveStateItemId" type="xs:long" />
+      <xs:element minOccurs="0" name="MdFieldName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PdfFileName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataView.SaveStateValueLookup" nillable="true" type="tns:DataView.SaveStateValueLookup" />
+  <xs:complexType name="ArrayOfDataView.SaveStateHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataView.SaveStateHistory" nillable="true" type="tns:DataView.SaveStateHistory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataView.SaveStateHistory" nillable="true" type="tns:ArrayOfDataView.SaveStateHistory" />
+  <xs:complexType name="DataView.SaveStateHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ItemText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MdFieldName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PdfFileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecordAction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TimeToNextChange" type="ser:duration" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataView.SaveStateHistory" nillable="true" type="tns:DataView.SaveStateHistory" />
+  <xs:complexType name="ArrayOfDataView.FileTouchAvg">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataView.FileTouchAvg" nillable="true" type="tns:DataView.FileTouchAvg" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataView.FileTouchAvg" nillable="true" type="tns:ArrayOfDataView.FileTouchAvg" />
+  <xs:complexType name="DataView.FileTouchAvg">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AvgDelta" type="ser:duration" />
+      <xs:element minOccurs="0" name="AvgTimeBetweenFiles" type="ser:duration" />
+      <xs:element minOccurs="0" name="AvgTimeInFile" type="ser:duration" />
+      <xs:element minOccurs="0" name="OperatorName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalTimeInFiles" type="ser:duration" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataView.FileTouchAvg" nillable="true" type="tns:DataView.FileTouchAvg" />
+  <xs:complexType name="ArrayOfDataView.ProcessErrors">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataView.ProcessErrors" nillable="true" type="tns:DataView.ProcessErrors" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataView.ProcessErrors" nillable="true" type="tns:ArrayOfDataView.ProcessErrors" />
+  <xs:complexType name="DataView.ProcessErrors">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BatchId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BoxActivityId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BoxId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BoxRelativePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IssueNotificationList" nillable="true" type="tns:ArrayOfDataView.ProcessErrorIssues" />
+      <xs:element minOccurs="0" name="JobActivityId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="JobDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JobId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="JobRelativePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProcessErrorDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ProcessInfoId" type="xs:long" />
+      <xs:element minOccurs="0" name="ProcessName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProcessQueueId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataView.ProcessErrors" nillable="true" type="tns:DataView.ProcessErrors" />
+  <xs:complexType name="ArrayOfDataView.ProcessErrorIssues">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataView.ProcessErrorIssues" nillable="true" type="tns:DataView.ProcessErrorIssues" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataView.ProcessErrorIssues" nillable="true" type="tns:ArrayOfDataView.ProcessErrorIssues" />
+  <xs:complexType name="DataView.ProcessErrorIssues">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IssueDebugInfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IssueMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IssueNotificationId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataView.ProcessErrorIssues" nillable="true" type="tns:DataView.ProcessErrorIssues" />
+  <xs:complexType name="DocumentationList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Documentation" nillable="true" type="tns:Documentation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DocumentationList" nillable="true" type="tns:DocumentationList" />
+  <xs:complexType name="Documentation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeUserId" type="xs:long" />
+      <xs:element minOccurs="0" name="CreateTs" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentationId" type="xs:long" />
+      <xs:element minOccurs="0" name="ExternalDocumentationUri" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InternalDocumentation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JobId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="ProjectId" type="xs:long" />
+      <xs:element minOccurs="0" name="ProjectLocationId" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Documentation" nillable="true" type="tns:Documentation" />
+  <xs:complexType name="FileInfoList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="File_Info" nillable="true" type="tns:File_Info" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FileInfoList" nillable="true" type="tns:FileInfoList" />
+  <xs:complexType name="File_Info">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BoxFolderId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BoxId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="FileInfoId" type="xs:long" />
+      <xs:element minOccurs="0" name="FormTypeOverride" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IndexFileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MdFormId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="OcrEndPage" type="xs:int" />
+      <xs:element minOccurs="0" name="OcrStartPage" type="xs:int" />
+      <xs:element minOccurs="0" name="PdfFileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QaConfirmed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RowVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SourceLocation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalPages" type="xs:int" />
+      <xs:element minOccurs="0" name="UserAccessed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UserReleased" type="xs:boolean" />
+      <xs:element minOccurs="0" name="WasConfirmed" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="File_Info" nillable="true" type="tns:File_Info" />
+  <xs:complexType name="FileInfoPackageFormList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FileInfoPackageForm" nillable="true" type="tns:FileInfoPackageForm" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FileInfoPackageFormList" nillable="true" type="tns:FileInfoPackageFormList" />
+  <xs:complexType name="FileInfoPackageForm">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FileInfoId" type="xs:long" />
+      <xs:element minOccurs="0" name="FileInfoPackageFormId" type="xs:long" />
+      <xs:element minOccurs="0" name="MdFormId" type="xs:long" />
+      <xs:element minOccurs="0" name="PdfStartPageNumber" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FileInfoPackageForm" nillable="true" type="tns:FileInfoPackageForm" />
+  <xs:complexType name="FileInfoFieldList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FileInfoField" nillable="true" type="tns:FileInfoField" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FileInfoFieldList" nillable="true" type="tns:FileInfoFieldList" />
+  <xs:complexType name="FileInfoField">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CharConfidence" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExtractedValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileInfoFieldId" type="xs:long" />
+      <xs:element minOccurs="0" name="FileInfoId" type="xs:long" />
+      <xs:element minOccurs="0" name="FileInfoPackageFormId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="MdFieldId" type="xs:long" />
+      <xs:element minOccurs="0" name="PdfPageNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="PrimeBottomCoord" type="xs:int" />
+      <xs:element minOccurs="0" name="PrimeLeftCoord" type="xs:int" />
+      <xs:element minOccurs="0" name="PrimeRightCoord" type="xs:int" />
+      <xs:element minOccurs="0" name="PrimeTopCoord" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FileInfoField" nillable="true" type="tns:FileInfoField" />
+  <xs:complexType name="IndexProfileList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IndexProfile" nillable="true" type="tns:IndexProfile" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IndexProfileList" nillable="true" type="tns:IndexProfileList" />
+  <xs:complexType name="IndexProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="GlobalUniqueKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IndexProfileId" type="xs:long" />
+      <xs:element minOccurs="0" name="MaxFilenameSize" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MdFormId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="MetadataTypeId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="ProfileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProjectId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="RowVersion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IndexProfile" nillable="true" type="tns:IndexProfile" />
+  <xs:complexType name="IndexProfileItemList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IndexProfileItem" nillable="true" type="tns:IndexProfileItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IndexProfileItemList" nillable="true" type="tns:IndexProfileItemList" />
+  <xs:complexType name="IndexProfileItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllowCloning" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AlternateMdFieldIdentifierIdList" nillable="true" type="tns:ArrayOfIndexProfileItem.AlternateMdFieldIdentifierItem" />
+      <xs:element minOccurs="0" name="FieldLabel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FieldPosition" type="xs:int" />
+      <xs:element minOccurs="0" name="FilenameCharSubsFrom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilenameCharSubsTo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilenameDefaultValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilenamePosition" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FilenameStringFormat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GlobalUniqueKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IndexProfileId" type="xs:long" />
+      <xs:element minOccurs="0" name="IndexProfileItemAssocData" nillable="true" type="tns:IndexProfileItemAssocData" />
+      <xs:element minOccurs="0" name="IndexProfileItemAssocList" nillable="true" type="tns:ArrayOfIndexProfileItemAssoc" />
+      <xs:element minOccurs="0" name="IndexProfileItemId" type="xs:long" />
+      <xs:element minOccurs="0" name="IndexProfileItemPickList" nillable="true" type="tns:ArrayOfIndexProfileItemPickListItem" />
+      <xs:element minOccurs="0" name="IsAutoCapitalize" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsAutofill" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsBoxNumber" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsDateField" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsDateParsePair" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsFullTextEditor" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsIndexed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsJobNumber" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsMultiline" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsOperatorFeedback" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsPickListDropDownBox" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsRequired" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsRichTextEditor" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MaximumTextLength" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MdFieldIdentifierId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="MetadataDefaultValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MetadataFieldName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MetadataPosition" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MetadataStringFormat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MultilineDelimiter" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MultilineNumItemsInFilename" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RegexValidation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RowVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StaticValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UseSpellCheck" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UseSpellCheckSuggestions" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ValidYearFrom" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ValidYearTo" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IndexProfileItem" nillable="true" type="tns:IndexProfileItem" />
+  <xs:complexType name="ArrayOfIndexProfileItem.AlternateMdFieldIdentifierItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IndexProfileItem.AlternateMdFieldIdentifierItem" nillable="true" type="tns:IndexProfileItem.AlternateMdFieldIdentifierItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIndexProfileItem.AlternateMdFieldIdentifierItem" nillable="true" type="tns:ArrayOfIndexProfileItem.AlternateMdFieldIdentifierItem" />
+  <xs:complexType name="IndexProfileItem.AlternateMdFieldIdentifierItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IndexProfileItemAltMdFieldIdentifierId" type="xs:long" />
+      <xs:element minOccurs="0" name="MdFieldIdentifierId" type="xs:long" />
+      <xs:element minOccurs="0" name="PrecedenceOrder" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IndexProfileItem.AlternateMdFieldIdentifierItem" nillable="true" type="tns:IndexProfileItem.AlternateMdFieldIdentifierItem" />
+  <xs:complexType name="IndexProfileItemAssocData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CollectionName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="IndexProfileItemAssocDataId" type="xs:long" />
+      <xs:element minOccurs="0" name="IndexProfileItemAssocListId" type="xs:long" />
+      <xs:element minOccurs="0" name="IndexProfileItemId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="ProjectId" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IndexProfileItemAssocData" nillable="true" type="tns:IndexProfileItemAssocData" />
+  <xs:complexType name="ArrayOfIndexProfileItemAssoc">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IndexProfileItemAssoc" nillable="true" type="tns:IndexProfileItemAssoc" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIndexProfileItemAssoc" nillable="true" type="tns:ArrayOfIndexProfileItemAssoc" />
+  <xs:complexType name="IndexProfileItemAssoc">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssocListLevel" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IndexProfileItemAssocId" type="xs:long" />
+      <xs:element minOccurs="0" name="IndexProfileItemId" type="xs:long" />
+      <xs:element minOccurs="0" name="ListItemFilenamePosition" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ListItemMetadataName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ListItemMetadataPosition" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IndexProfileItemAssoc" nillable="true" type="tns:IndexProfileItemAssoc" />
+  <xs:complexType name="ArrayOfIndexProfileItemPickListItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IndexProfileItemPickListItem" nillable="true" type="tns:IndexProfileItemPickListItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIndexProfileItemPickListItem" nillable="true" type="tns:ArrayOfIndexProfileItemPickListItem" />
+  <xs:complexType name="IndexProfileItemPickListItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IndexProfileItemId" type="xs:long" />
+      <xs:element minOccurs="0" name="IndexProfilePicklistItemId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="PicklistItem" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IndexProfileItemPickListItem" nillable="true" type="tns:IndexProfileItemPickListItem" />
+  <xs:complexType name="ArrayOfIndexProfileItemAssocList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IndexProfileItemAssocList" nillable="true" type="tns:IndexProfileItemAssocList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIndexProfileItemAssocList" nillable="true" type="tns:ArrayOfIndexProfileItemAssocList" />
+  <xs:complexType name="IndexProfileItemAssocList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IndexProfileItemAssocListId" type="xs:long" />
+      <xs:element minOccurs="0" name="NodeLevel" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NodeValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentAssocListId" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IndexProfileItemAssocList" nillable="true" type="tns:IndexProfileItemAssocList" />
+  <xs:complexType name="ArrayOfIndexProfileItemAssocData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IndexProfileItemAssocData" nillable="true" type="tns:IndexProfileItemAssocData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIndexProfileItemAssocData" nillable="true" type="tns:ArrayOfIndexProfileItemAssocData" />
+  <xs:complexType name="IndexSaveStateItemList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IndexSaveStateItem" nillable="true" type="tns:IndexSaveStateItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IndexSaveStateItemList" nillable="true" type="tns:IndexSaveStateItemList" />
+  <xs:complexType name="IndexSaveStateItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeUserId" type="xs:long" />
+      <xs:element minOccurs="0" name="FileInfoId" type="xs:long" />
+      <xs:element minOccurs="0" name="IndexProfileItemId" type="xs:long" />
+      <xs:element minOccurs="0" name="IndexSaveStateItemId" type="xs:long" />
+      <xs:element minOccurs="0" name="ItemText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MdFieldId" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IndexSaveStateItem" nillable="true" type="tns:IndexSaveStateItem" />
+  <xs:complexType name="ArrayOfUniqueItemText">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UniqueItemText" nillable="true" type="tns:UniqueItemText" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUniqueItemText" nillable="true" type="tns:ArrayOfUniqueItemText" />
+  <xs:complexType name="UniqueItemText">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ItemText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MdFieldIdentifier" type="xs:long" />
+      <xs:element minOccurs="0" name="ModifyTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UsageCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UniqueItemText" nillable="true" type="tns:UniqueItemText" />
+</xs:schema>

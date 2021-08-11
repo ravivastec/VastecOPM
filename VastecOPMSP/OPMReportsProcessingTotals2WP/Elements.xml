@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/" >
+  <Module Name="OPMReportsProcessingTotals2WP" List="113" Url="_catalogs/wp">
+    <File Path="OPMReportsProcessingTotals2WP\OPMReportsProcessingTotals2WP.webpart" Url="VastecOPMSP_OPMReportsProcessingTotals2WP.webpart" Type="GhostableInLibrary" >
+      <Property Name="Group" Value="Custom" />
+    </File>
+  </Module>
+</Elements>

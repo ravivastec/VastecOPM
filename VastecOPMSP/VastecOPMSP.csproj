@@ -1,0 +1,675 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0D185055-60E4-45BC-83FD-2288AFD9C758}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VastecOPMSP</RootNamespace>
+    <AssemblyName>VastecOPMSP</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetOfficeVersion>16.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+    <MinimumOfficeToolsVersion>14.0</MinimumOfficeToolsVersion>
+    <SandboxedSolution>False</SandboxedSolution>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Server, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.Office.Server.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Server.UserProfiles, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.Office.Server.UserProfiles.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\FHSvc\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\SerializerExtensions.cs" />
+    <Compile Include="Layouts\VastecOPMSPWebService\WebService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OPMAgencyWP\OPMAgencyWP.cs" />
+    <Compile Include="OPMAgencyWP\OPMAgencyWPUserControl.ascx.cs">
+      <DependentUpon>OPMAgencyWPUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OPMAgencyWP\OPMAgencyWPUserControl.ascx.designer.cs">
+      <DependentUpon>OPMAgencyWPUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OPMCompletedPriorityRequestsWP\OPMCompletedPriorityRequestsWP.cs" />
+    <Compile Include="OPMCompletedPriorityRequestsWP\OPMCompletedPriorityRequestsWPUserControl.ascx.cs">
+      <DependentUpon>OPMCompletedPriorityRequestsWPUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OPMCompletedPriorityRequestsWP\OPMCompletedPriorityRequestsWPUserControl.ascx.designer.cs">
+      <DependentUpon>OPMCompletedPriorityRequestsWPUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OPMIssueFoldersWP\OPMIssueFoldersWP.ascx.cs">
+      <DependentUpon>OPMIssueFoldersWP.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="OPMIssueFoldersWP\OPMIssueFoldersWP.ascx.g.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OPMIssueFoldersWP.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="OPMManageIssueFoldersWP\OPMManageIssueFoldersWP.cs" />
+    <Compile Include="OPMManageIssueFoldersWP\OPMManageIssueFoldersWPUserControl.ascx.cs">
+      <DependentUpon>OPMManageIssueFoldersWPUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OPMManageIssueFoldersWP\OPMManageIssueFoldersWPUserControl.ascx.designer.cs">
+      <DependentUpon>OPMManageIssueFoldersWPUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OPMManageManifestsWP\OPMManageManifestsWP.cs" />
+    <Compile Include="OPMManageManifestsWP\OPMManageManifestsWPUserControl.ascx.cs">
+      <DependentUpon>OPMManageManifestsWPUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OPMManageManifestsWP\OPMManageManifestsWPUserControl.ascx.designer.cs">
+      <DependentUpon>OPMManageManifestsWPUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OPMManagePriorityRequestsWP\OPMManagePriorityRequestsWP.cs" />
+    <Compile Include="OPMManagePriorityRequestsWP\OPMManagePriorityRequestsWPUserControl.ascx.cs">
+      <DependentUpon>OPMManagePriorityRequestsWPUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OPMManagePriorityRequestsWP\OPMManagePriorityRequestsWPUserControl.ascx.designer.cs">
+      <DependentUpon>OPMManagePriorityRequestsWPUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OPMPriorityRequestsWP\OPMPriorityRequestsWP.cs" />
+    <Compile Include="OPMPriorityRequestsWP\OPMPriorityRequestsWPUserControl.ascx.cs">
+      <DependentUpon>OPMPriorityRequestsWPUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OPMPriorityRequestsWP\OPMPriorityRequestsWPUserControl.ascx.designer.cs">
+      <DependentUpon>OPMPriorityRequestsWPUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OPMRedirectWP\OPMRedirectWP.cs" />
+    <Compile Include="OPMRedirectWP\OPMRedirectWPUserControl.ascx.cs">
+      <DependentUpon>OPMRedirectWPUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OPMRedirectWP\OPMRedirectWPUserControl.ascx.designer.cs">
+      <DependentUpon>OPMRedirectWPUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OPMReportsProcessingTotals2WP\OPMReportsProcessingTotals2WP.cs" />
+    <Compile Include="OPMReportsProcessingTotals2WP\OPMReportsProcessingTotals2WPUserControl.ascx.cs">
+      <DependentUpon>OPMReportsProcessingTotals2WPUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OPMReportsProcessingTotals2WP\OPMReportsProcessingTotals2WPUserControl.ascx.designer.cs">
+      <DependentUpon>OPMReportsProcessingTotals2WPUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OPMReportsProcessingTotalsWP\OPMReportsProcessingTotalsWP.cs" />
+    <Compile Include="OPMReportsProcessingTotalsWP\OPMReportsProcessingTotalsWPUserControl.ascx.cs">
+      <DependentUpon>OPMReportsProcessingTotalsWPUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OPMReportsProcessingTotalsWP\OPMReportsProcessingTotalsWPUserControl.ascx.designer.cs">
+      <DependentUpon>OPMReportsProcessingTotalsWPUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OPMReportsTreeViewWP\OPMReportsTreeViewWP.cs" />
+    <Compile Include="OPMReportsTreeViewWP\OPMReportsTreeViewWPUserControl.ascx.cs">
+      <DependentUpon>OPMReportsTreeViewWPUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OPMReportsTreeViewWP\OPMReportsTreeViewWPUserControl.ascx.designer.cs">
+      <DependentUpon>OPMReportsTreeViewWPUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OPMReports\OPMInvoicingReportsWP\OPMInvoicingReportsWP.cs" />
+    <Compile Include="OPMReports\OPMInvoicingReportsWP\OPMInvoicingReportsWPUserControl.ascx.cs">
+      <DependentUpon>OPMInvoicingReportsWPUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OPMReports\OPMInvoicingReportsWP\OPMInvoicingReportsWPUserControl.ascx.designer.cs">
+      <DependentUpon>OPMInvoicingReportsWPUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OPMReports\OPMProductionReportsWP\OPMProductionReportsWP.cs" />
+    <Compile Include="OPMReports\OPMProductionReportsWP\OPMProductionReportsWPUserControl.ascx.cs">
+      <DependentUpon>OPMProductionReportsWPUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OPMReports\OPMProductionReportsWP\OPMProductionReportsWPUserControl.ascx.designer.cs">
+      <DependentUpon>OPMProductionReportsWPUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OPMUploadManifestsWP\OPMUploadManifestsWP.cs" />
+    <Compile Include="OPMUploadManifestsWP\OPMUploadManifestsWPUserControl.ascx.cs">
+      <DependentUpon>OPMUploadManifestsWPUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OPMUploadManifestsWP\OPMUploadManifestsWPUserControl.ascx.designer.cs">
+      <DependentUpon>OPMUploadManifestsWPUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OPMViewIssueFoldersWP\OPMViewIssueFoldersWP.ascx.cs">
+      <DependentUpon>OPMViewIssueFoldersWP.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="OPMViewIssueFoldersWP\OPMViewIssueFoldersWP.ascx.g.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OPMViewIssueFoldersWP.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="OPMViewManifestsWP\OPMViewManifestsWP.cs" />
+    <Compile Include="OPMViewManifestsWP\OPMViewManifestsWPUserControl.ascx.cs">
+      <DependentUpon>OPMViewManifestsWPUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OPMViewManifestsWP\OPMViewManifestsWPUserControl.ascx.designer.cs">
+      <DependentUpon>OPMViewManifestsWPUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OPMViewPriorityRequestsWP\OPMViewPriorityRequestsWP.ascx.cs">
+      <DependentUpon>OPMViewPriorityRequestsWP.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="OPMViewPriorityRequestsWP\OPMViewPriorityRequestsWP.ascx.g.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OPMViewPriorityRequestsWP.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Connected Services\FHSvc\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FHSvc\FlowHubData.Business.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FHSvc\FlowHubData.DataAccess.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FHSvc\FlowHubData.XSD_Classes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FHSvc\Message.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FHSvc\service.wsdl" />
+    <None Include="Connected Services\FHSvc\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FHSvc\System.Drawing.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FHSvc\Vastec.FlowHub.Service.wsdl" />
+    <None Include="Connected Services\FHSvc\Vastec.FlowHub.Service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.Batch.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.BoxActivity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.BoxActivityDacDualIndex.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.BoxActivityList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.BoxAndBoxActivityId.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.BoxFolderList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.BoxList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.BoxManifestItemList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.BoxManifestItemTransmitList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.BoxManifestList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.CurrentJobActivity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.CustomerList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.CustomerUserRoleList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.DataViewActivityStatusList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.DataViewFileTouchAvg.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.DataViewProcessErrors.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.DataViewProcessingTotals.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.DataViewSaveStateHistory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.DataViewSaveStateValueLookup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.DataViewUniqueSaveStateItems.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.DocumentationList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.FileInfoFieldList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.FileInfoList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.FileInfoPackageFormList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.IndexProfileItemAssoc.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.IndexProfileItemAssocData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.IndexProfileItemAssocList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.IndexProfileItemList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.IndexProfileList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.IndexSaveStateItemList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.IssueNotificationList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.JobActivityList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.JobList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.JobProcessesJobData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.JobUserRoleList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.LocationList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.ManifestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.MdFieldIdentifierList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.MdFieldList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.MdFormList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.MdFormPackageList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.MdFormPageList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.MdFormZoneAttribList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.MdFormZoneList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.MetadataTypeList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.ProcessConfigList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.ProcessInfoList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.ProcessQueueList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.ProcessQueueStateList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.ProcessServerList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.ProjectList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.ProjectLocationList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.ProjectLocationUserRoleList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.ProjectManifestLookupList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.ProjectOfficeIdentifierList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.ProjectWorkflowList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.RoleList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.TeamList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.TeamUserList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.TeamUserRoleList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.UniqueItemText.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.UserActivity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.UserCookie.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.UserList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.UserNoteList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.UserRoleList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.WorkflowActivityList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FHSvc\VastecOPMSP.FHSvc.WorkflowList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Features\OPMAgency\OPMAgency.feature">
+      <FeatureId>{5a703f0d-84a6-44f5-aae1-8fa654d90e71}</FeatureId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Layouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{6c34ad40-ae9d-4a64-9d16-df6b42a69757}</SharePointProjectItemId>
+    </None>
+    <None Include="Layouts\Common\styles\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Layouts\Common\styles\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="Layouts\Common\styles\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Layouts\Common\styles\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="OPMAgencyWP\OPMAgencyWP.webpart">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OPMAgencyWP\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{defcf474-e509-402f-a636-ad600911757c}</SharePointProjectItemId>
+    </None>
+    <None Include="OPMCompletedPriorityRequestsWP\OPMCompletedPriorityRequestsWP.webpart" />
+    <None Include="OPMCompletedPriorityRequestsWP\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{1a522852-5c62-4eb9-9c5e-03e57999a64b}</SharePointProjectItemId>
+    </None>
+    <None Include="OPMIssueFoldersWP\OPMIssueFoldersWP.webpart" />
+    <None Include="OPMIssueFoldersWP\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{b0983cae-e950-4fae-a243-e9ee9c38a393}</SharePointProjectItemId>
+    </None>
+    <None Include="OPMManageIssueFoldersWP\OPMManageIssueFoldersWP.webpart" />
+    <None Include="OPMManageIssueFoldersWP\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{34246c0b-709a-4472-94a6-6f2683e9308d}</SharePointProjectItemId>
+    </None>
+    <None Include="OPMManageManifestsWP\OPMManageManifestsWP.webpart" />
+    <None Include="OPMManageManifestsWP\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{92154012-1d30-458b-a59b-3e94fc5b1779}</SharePointProjectItemId>
+    </None>
+    <None Include="OPMManagePriorityRequestsWP\OPMManagePriorityRequestsWP.webpart" />
+    <None Include="OPMManagePriorityRequestsWP\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f6481b65-4897-4619-adc7-e3c52ab66f20}</SharePointProjectItemId>
+    </None>
+    <None Include="OPMPriorityRequestsWP\OPMPriorityRequestsWP.webpart" />
+    <None Include="OPMPriorityRequestsWP\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{4a9ff7c9-9adf-448b-93e3-fa0242be558d}</SharePointProjectItemId>
+    </None>
+    <None Include="OPMRedirectWP\OPMRedirectWP.webpart" />
+    <None Include="OPMRedirectWP\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{c2af5b77-22e1-4cb9-ad86-e683db5c5814}</SharePointProjectItemId>
+    </None>
+    <None Include="OPMReportsProcessingTotals2WP\OPMReportsProcessingTotals2WP.webpart" />
+    <None Include="OPMReportsProcessingTotals2WP\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{072e8e02-3864-4f3d-b621-6ec47732127a}</SharePointProjectItemId>
+    </None>
+    <None Include="OPMReportsProcessingTotalsWP\OPMReportsProcessingTotalsWP.webpart" />
+    <None Include="OPMReportsProcessingTotalsWP\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{0173206c-a78a-4dcc-9fa6-4e4f0702033b}</SharePointProjectItemId>
+    </None>
+    <None Include="OPMReportsTreeViewWP\OPMReportsTreeViewWP.webpart" />
+    <None Include="OPMReportsTreeViewWP\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{17b134a5-624d-4e45-b5ca-f2f0584b0158}</SharePointProjectItemId>
+    </None>
+    <None Include="OPMReports\OPMInvoicingReportsWP\OPMInvoicingReportsWP.webpart" />
+    <None Include="OPMReports\OPMInvoicingReportsWP\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{a6903584-46e0-4019-bada-2e3eae577915}</SharePointProjectItemId>
+    </None>
+    <None Include="OPMReports\OPMProductionReportsWP\OPMProductionReportsWP.webpart" />
+    <None Include="OPMReports\OPMProductionReportsWP\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{b2acc10b-0d41-44d2-beaf-724d79e5dfd6}</SharePointProjectItemId>
+    </None>
+    <None Include="OPMUploadManifestsWP\OPMUploadManifestsWP.webpart" />
+    <None Include="OPMUploadManifestsWP\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{4841c872-ca3f-4fda-ace0-bb8ed5df0f53}</SharePointProjectItemId>
+    </None>
+    <None Include="OPMViewIssueFoldersWP\OPMViewIssueFoldersWP.webpart" />
+    <None Include="OPMViewIssueFoldersWP\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{62ae50b8-488f-46b2-b0d5-bb2280d9bbc1}</SharePointProjectItemId>
+    </None>
+    <None Include="OPMViewManifestsWP\OPMViewManifestsWP.webpart" />
+    <None Include="OPMViewManifestsWP\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{1a182273-1f3e-42fa-b969-2986e2c05f34}</SharePointProjectItemId>
+    </None>
+    <None Include="OPMViewPriorityRequestsWP\OPMViewPriorityRequestsWP.webpart" />
+    <None Include="OPMViewPriorityRequestsWP\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{b62fa068-2b30-4e3e-919c-d0c85439c287}</SharePointProjectItemId>
+    </None>
+    <None Include="Package\Package.package">
+      <PackageId>{47d2c0b5-f050-4ea5-a428-b379692f7fe2}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\FHSvc\configuration91.svcinfo" />
+    <None Include="Connected Services\FHSvc\configuration.svcinfo" />
+    <None Include="Connected Services\FHSvc\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Layouts\Common\scripts\js\jquery.cookie.js" />
+    <Content Include="Layouts\Common\scripts\js\papaparse.min.js" />
+    <Content Include="Layouts\Common\scripts\js\popper.min.js" />
+    <Content Include="Layouts\Common\scripts\js\print.min.js" />
+    <Content Include="Layouts\Common\styles\images\sort_asc.png" />
+    <Content Include="Layouts\Common\styles\images\sort_asc_disabled.png" />
+    <Content Include="Layouts\Common\styles\images\sort_both.png" />
+    <Content Include="Layouts\Common\styles\images\sort_desc.png" />
+    <Content Include="Layouts\Common\styles\images\sort_desc_disabled.png" />
+    <Content Include="Layouts\VastecOPMSP\Common.js" />
+    <Content Include="Layouts\VastecOPMSP\ProductionReports.js" />
+    <Content Include="Layouts\VastecOPMSP\InvoicingReports.js" />
+    <Content Include="Layouts\VastecOPMSP\ReportTreeView.js" />
+    <Content Include="Layouts\VastecOPMSP\ReportProcessingTotals2.js" />
+    <Content Include="Layouts\VastecOPMSP\ReportProcessingTotals.js" />
+    <Content Include="Layouts\VastecOPMSP\ExpandCollapseQuickLaunch2.js" />
+    <Content Include="Layouts\VastecOPMSP\ExpandCollapseQuickLaunch.js" />
+    <Content Include="Layouts\VastecOPMSP\ManageManifests.js" />
+    <Content Include="Layouts\VastecOPMSP\style.css" />
+    <Content Include="Layouts\VastecOPMSP\UploadManifests.js" />
+    <Content Include="Layouts\VastecOPMSP\ViewManifests.js" />
+    <Content Include="Layouts\VastecOPMSP\ManageIssueFolders.js" />
+    <Content Include="Layouts\VastecOPMSP\ManagePriorityRequests.js" />
+    <Content Include="Layouts\VastecOPMSP\ViewPriorityManifests.js" />
+    <Content Include="Layouts\VastecOPMSP\CompletedPriorityRequests.js" />
+    <Content Include="Layouts\VastecOPMSP\ViewPriorityRequests.js" />
+    <Content Include="Layouts\VastecOPMSP\ViewIssueFolders.js" />
+    <Content Include="Layouts\VastecOPMSP\CreateIssueFolders.js" />
+    <Content Include="Layouts\VastecOPMSP\CreatePriorityRequests.js" />
+    <Content Include="OPMCompletedPriorityRequestsWP\Elements.xml" />
+    <Content Include="OPMCompletedPriorityRequestsWP\OPMCompletedPriorityRequestsWPUserControl.ascx" />
+    <Content Include="OPMIssueFoldersWP\Elements.xml" />
+    <Content Include="OPMIssueFoldersWP\OPMIssueFoldersWP.ascx">
+      <Generator>SharePointWebPartCodeGenerator</Generator>
+      <LastGenOutput>OPMIssueFoldersWP.ascx.g.cs</LastGenOutput>
+    </Content>
+    <Content Include="OPMManageIssueFoldersWP\Elements.xml" />
+    <Content Include="OPMManageIssueFoldersWP\OPMManageIssueFoldersWPUserControl.ascx" />
+    <Content Include="OPMManageManifestsWP\Elements.xml" />
+    <Content Include="OPMManageManifestsWP\OPMManageManifestsWPUserControl.ascx" />
+    <Content Include="OPMManagePriorityRequestsWP\Elements.xml" />
+    <Content Include="OPMManagePriorityRequestsWP\OPMManagePriorityRequestsWPUserControl.ascx" />
+    <Content Include="OPMPriorityRequestsWP\Elements.xml" />
+    <Content Include="OPMPriorityRequestsWP\OPMPriorityRequestsWPUserControl.ascx" />
+    <Content Include="OPMRedirectWP\Elements.xml" />
+    <Content Include="OPMRedirectWP\OPMRedirectWPUserControl.ascx" />
+    <Content Include="OPMReportsProcessingTotals2WP\Elements.xml" />
+    <Content Include="OPMReportsProcessingTotals2WP\OPMReportsProcessingTotals2WPUserControl.ascx" />
+    <Content Include="OPMReportsProcessingTotalsWP\Elements.xml" />
+    <Content Include="OPMReportsProcessingTotalsWP\OPMReportsProcessingTotalsWPUserControl.ascx" />
+    <Content Include="OPMReportsTreeViewWP\Elements.xml" />
+    <Content Include="OPMReportsTreeViewWP\OPMReportsTreeViewWPUserControl.ascx" />
+    <Content Include="OPMReports\OPMInvoicingReportsWP\Elements.xml" />
+    <Content Include="OPMReports\OPMInvoicingReportsWP\OPMInvoicingReportsWPUserControl.ascx" />
+    <Content Include="OPMReports\OPMProductionReportsWP\Elements.xml" />
+    <Content Include="OPMReports\OPMProductionReportsWP\OPMProductionReportsWPUserControl.ascx" />
+    <Content Include="OPMUploadManifestsWP\Elements.xml" />
+    <Content Include="OPMUploadManifestsWP\OPMUploadManifestsWPUserControl.ascx" />
+    <Content Include="OPMViewIssueFoldersWP\Elements.xml" />
+    <Content Include="OPMViewIssueFoldersWP\OPMViewIssueFoldersWP.ascx">
+      <Generator>SharePointWebPartCodeGenerator</Generator>
+      <LastGenOutput>OPMViewIssueFoldersWP.ascx.g.cs</LastGenOutput>
+    </Content>
+    <Content Include="OPMViewManifestsWP\Elements.xml" />
+    <Content Include="OPMViewManifestsWP\OPMViewManifestsWPUserControl.ascx" />
+    <Content Include="OPMViewPriorityRequestsWP\Elements.xml" />
+    <Content Include="OPMViewPriorityRequestsWP\OPMViewPriorityRequestsWP.ascx">
+      <Generator>SharePointWebPartCodeGenerator</Generator>
+      <LastGenOutput>OPMViewPriorityRequestsWP.ascx.g.cs</LastGenOutput>
+    </Content>
+    <Content Include="Features\OPMAgency\OPMAgency.Template.xml">
+      <DependentUpon>OPMAgency.feature</DependentUpon>
+    </Content>
+    <Content Include="Layouts\Common\scripts\js\bootstrap.min.js" />
+    <Content Include="Layouts\Common\scripts\js\jquery-ui.min.js" />
+    <Content Include="Layouts\Common\scripts\js\jquery.dataTables.min.js" />
+    <Content Include="Layouts\Common\scripts\js\jquery.min.js" />
+    <Content Include="Layouts\Common\scripts\js\jquery.validate.min.js" />
+    <Content Include="Layouts\Common\scripts\js\jspdf.autotable.split_text_to_size.js" />
+    <Content Include="Layouts\Common\scripts\js\jspdf.autotable.standard_fonts_metrics.js" />
+    <Content Include="Layouts\Common\scripts\js\jspdf.min.js" />
+    <Content Include="Layouts\Common\scripts\js\jspdf.plugin.autotable.min.js" />
+    <Content Include="Layouts\Common\scripts\js\underscore.js" />
+    <Content Include="Layouts\Common\styles\css\bootstrap.min.css" />
+    <Content Include="Layouts\Common\styles\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Layouts\Common\styles\css\jquery-ui.css" />
+    <Content Include="Layouts\Common\styles\css\jquery.dataTables.min.css" />
+    <Content Include="Layouts\VastecOPMSPWebService\WebService.asmx" />
+    <Content Include="Layouts\VastecOPMSP\CreateManifests.js" />
+    <Content Include="OPMAgencyWP\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="OPMAgencyWP\OPMAgencyWPUserControl.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\FHSvc\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>
